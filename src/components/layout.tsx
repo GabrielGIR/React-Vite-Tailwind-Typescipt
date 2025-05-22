@@ -2,17 +2,19 @@ import { useEffect } from "react";
 import { Footer } from "./elements/footer";
 import { Navbar } from "./elements/navbar";
 
-interface LayoutProps {
+interface LayoutProps { //
     title: string;
-    children: React.ReactNode;
+    children: React.ReactNode; //Layout es un componente "envuelto" esto hara que acepte children
 }
 
-export const Layout = ({title, children}: LayoutProps) =>{ 
-    useEffect(() => {
-        document.title = title;
+export const Layout = ({title, children}: LayoutProps) =>{  
+    useEffect(() => {// Actualiza el título del documento cuando cambia la prop 'title'
+
+
+        document.title = title; //Especificamente cuando el titulo cambia
     }, [title]);
     
-    return(
+    return( //Estructura de la página
     <> 
         <Navbar/>
         
